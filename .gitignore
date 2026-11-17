@@ -1,0 +1,32 @@
+/target/
+**/node_modules/
+
+# JavaScript build and test outputs
+**/dist/
+**/coverage/
+
+# Rust, WebAssembly, and native addon artifacts
+*.node
+*.wasm
+*.tgz
+/bindings/node-napi/index.d.ts
+
+# NAPI-RS interrupted file transactions
+**/.napi-rs-filesystem-transaction.swp/
+**/.*.prepared.tmp
+**/.*.retired.tmp
+**/.*.rollback.tmp
+
+# Local environment and logs
+.env*
+!.env.example
+*.log
+npm-debug.log*
+pnpm-debug.log*
+lerna-debug.log*
+
+# Editor and operating system files
+*.swp
+*.swo
+.DS_Store
+Thumbs.db

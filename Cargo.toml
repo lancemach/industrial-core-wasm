@@ -1,0 +1,28 @@
+[workspace]
+resolver = "2"
+members = [
+  "crates/core-types", "crates/core-errors", "crates/core-units",
+  "crates/core-precision", "crates/core-validation", "crates/core-version",
+  "crates/protocol-engine", "crates/sensor-engine", "crates/domain-engine",
+  "crates/data-engine", "crates/engine-facade", "bindings/wasm", "bindings/node-napi",
+]
+
+[workspace.package]
+version = "0.1.0"
+edition = "2024"
+license = "Apache-2.0"
+rust-version = "1.88"
+repository = "https://github.com/lancemach/industrial-core-wasm.git"
+
+[workspace.dependencies]
+serde = { version = "1", features = ["derive"] }
+thiserror = "2"
+wasm-bindgen = "0.2"
+napi = { version = "3", default-features = false, features = ["napi10"] }
+napi-derive = "3"
+napi-build = "2.6"
+
+[profile.release]
+lto = "thin"
+codegen-units = 1
+panic = "abort"

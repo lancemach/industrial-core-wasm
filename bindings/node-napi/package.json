@@ -1,0 +1,18 @@
+{
+  "name": "@industrial-core/node-native",
+  "private": true,
+  "version": "0.1.0",
+  "repository": { "type": "git", "url": "https://github.com/lancemach/industrial-core-wasm.git" },
+  "type": "module",
+  "scripts": {
+    "build": "napi build --release",
+    "test": "node --test tests/load-test.mjs"
+  },
+  "napi": {
+    "binaryName": "industrial_core_node",
+    "targets": ["x86_64-pc-windows-msvc"]
+  },
+  "devDependencies": {
+    "@napi-rs/cli": "^3.10.12"
+  }
+}
